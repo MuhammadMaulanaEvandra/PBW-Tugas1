@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koperasi Mahasiswa</title>
+  </head>
+  <body>
+    <h2>Form Belanja Mahasiswa</h2>
+
+    <form action="proses.php" method="POST">
+      Nama :
+      <input type="text" name="nama" /><br/><br/>
+
+      NIM :
+      <input type="text" name="nim" /><br/><br/>
+
+      Email :
+      <input type="email" name="email" /><br/><br/>
+
+      Jenis Layanan :
+      <input type="radio" name="layanan" value="Reguler" required/> Reguler
+      <input type="radio" name="layanan" value="Prioritas" /> Prioritas
+      <br /><br />
+
+      <b>Pilih Barang : </b><br /><br />
+
+      <input type="checkbox" name="barang[]" value="buku" /> Buku Tulis <br />
+      Jumlah: <input type="number" name="jumlah_buku" /><br /><br />
+
+      <input type="checkbox" name="barang[]" value="pensil" /> Pensil <br />
+      Jumlah: <input type="number" name="jumlah_pensil" /> <br /><br />
+
+      <input type="checkbox" name="barang[]" value="pulpen" /> Pulpen <br />
+      Jumlah: <input type="number" name="jumlah_pulpen" /> <br /><br />
+
+      <button type="submit">Kirim</button>
+    </form>
+  </body>
+</html>
