@@ -1,15 +1,3 @@
-<?php
-include 'koneksi.php';
-
-$id = $_GET['id'];
-
-$stmt = $conn->prepare("SELECT * FROM buku WHERE id=?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$result = $stmt->get_result();
-$data = $result->fetch_assoc();
-?>
-
 <?php include 'koneksi.php'; 
 
 $id = $_GET['id'];

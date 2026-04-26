@@ -3,13 +3,16 @@ include 'koneksi.php';
 
 $id = $_POST['id'];
 $judul = $_POST['judul'];
+$penulis = $_POST['penulis'];
+$tahun_terbit = $_POST['tahun_terbit'];
 $harga = $_POST['harga'];
+$stok = $_POST['stok'];
 
 $stmt = $conn->prepare(
-    "UPDATE buku SET judul=?, harga=? WHERE id=?"
+    "UPDATE buku SET judul=?, penulis=?, tahun_terbit=?, harga=?, stok=? WHERE id=?"
 );
 
-$stmt->bind_param("sdi", $judul, $harga, $id);
+$stmt->bind_param("ssidii", $judul, $penulis, $tahun_terbit, $harga, $stok, $id);
 
 if ($stmt->execute()) {
     echo "
