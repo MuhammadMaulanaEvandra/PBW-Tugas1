@@ -1,0 +1,107 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f6f9;
+}
+
+/* CONTAINER */
+.main-container {
+    margin-top: 50px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-weight: bold;
+}
+
+/* CARD UTAMA (INDEX) */
+.custom-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* FORM CARD (TAMBAH, EDIT, HAPUS) */
+.form-card {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* SEARCH */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* TABLE */
+.custom-table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-table thead {
+    background: #343a40;
+    color: #fff;
+}
+
+.custom-table th,
+.custom-table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.custom-table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+/* FORM */
+.form-control {
+    border-radius: 8px;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+/* BUTTON */
+.btn {
+    border-radius: 8px !important;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* ALERT */
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+}
