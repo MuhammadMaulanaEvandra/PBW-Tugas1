@@ -25,50 +25,45 @@ $data = $result->fetch_assoc();
 </head>
 <body>
 
-<div class="container main-container">
+    <div class="container main-container">
 
-    <div class="form-card">
+        <div class="form-card">
 
-        <h3 class="mb-4">✏️ Edit Produk</h3>
+            <h3 class="mb-4">Edit Produk</h3>
+            <form method="POST" action="proses_edit.php">
 
-        <form method="POST" action="proses_edit.php">
+                <input type="hidden" name="id" value="<?= $data['id'] ?>">
 
-            <input type="hidden" name="id" value="<?= $data['id'] ?>">
+                <div class="mb-3">
+                    <label class="form-label">Nama Produk</label>
+                    <input type="text" name="nama_produk" class="form-control" value="<?= htmlspecialchars($data['nama_produk']) ?>" required>
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label">Nama Produk</label>
-                <input type="text" name="nama_produk" class="form-control"
-                       value="<?= htmlspecialchars($data['nama_produk']) ?>" required>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Harga</label>
+                    <input type="number" name="harga" class="form-control" value="<?= $data['harga'] ?>" required>
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label">Harga</label>
-                <input type="number" name="harga" class="form-control"
-                       value="<?= $data['harga'] ?>" required>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Stok</label>
+                    <input type="number" name="stok" class="form-control" value="<?= $data['stok'] ?>" required>
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label">Stok</label>
-                <input type="number" name="stok" class="form-control"
-                       value="<?= $data['stok'] ?>" required>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Kategori</label>
+                    <input type="text" name="kategori" class="form-control" value="<?= $data['kategori'] ?>" required>
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label">Kategori</label>
-                <input type="text" name="kategori" class="form-control"
-                       value="<?= $data['kategori'] ?>" required>
-            </div>
+                <div class="d-flex justify-content-between">
+                    <a href="index.php" class="btn btn-secondary">← Kembali</a>
+                    <button type="submit" class="btn btn-warning">Update</button>
+                </div>
 
-            <div class="d-flex justify-content-between">
-                <a href="index.php" class="btn btn-secondary">← Kembali</a>
-                <button type="submit" class="btn btn-warning">Update</button>
-            </div>
+            </form>
 
-        </form>
+        </div>
 
     </div>
-
-</div>
 
 </body>
 </html>

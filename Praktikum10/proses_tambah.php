@@ -7,8 +7,7 @@ $stok = $_POST['stok'];
 $kategori = $_POST['kategori'];
 
 $stmt = $conn->prepare(
-    "INSERT INTO produk (nama_produk, harga, stok, kategori) 
-     VALUES (?, ?, ?, ?)"
+    "INSERT INTO produk (nama_produk, harga, stok, kategori) VALUES (?, ?, ?, ?)"
 );
 
 $stmt->bind_param("sdis", $nama_produk, $harga, $stok, $kategori);
@@ -43,11 +42,11 @@ $conn->close();
 
         <?php if ($success) { ?>
             <div class="alert alert-success">
-                ✅ Data berhasil ditambahkan!
+                Data berhasil ditambahkan!
             </div>
         <?php } else { ?>
             <div class="alert alert-danger">
-                ❌ Gagal menambahkan data!
+                Gagal menambahkan data!
             </div>
         <?php } ?>
 

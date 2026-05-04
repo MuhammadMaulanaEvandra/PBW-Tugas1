@@ -13,17 +13,18 @@
     <!-- CSS Custom -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container main-container">
 
     <!-- HEADER -->
     <div class="header">
-        <h2>📦 Data Produk</h2>
+        <h2>Data Produk</h2>
 
         <div class="d-flex gap-2">
             <a href="tambah.php" class="btn btn-primary">+ Tambah Produk</a>
-            <a href="logout.php" class="btn btn-danger">Logout</a>
+            <a href="login.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
 
@@ -32,9 +33,7 @@
 
         <!-- SEARCH -->
         <form method="GET" class="search-form">
-            <input type="text" name="keyword" 
-                placeholder="Cari nama produk / kategori..."
-                value="<?php echo isset($_GET['keyword']) ? $_GET['keyword'] : ''; ?>">
+            <input type="text" name="keyword" placeholder="Cari nama produk / kategori..." value="<?php echo isset($_GET['keyword']) ? $_GET['keyword'] : ''; ?>">
             <button type="submit" class="btn btn-success">Cari</button>
         </form>
 
@@ -57,9 +56,7 @@
                 $keyword = isset($_GET['keyword']) ? $conn->real_escape_string($_GET['keyword']) : '';
 
                 if ($keyword != '') {
-                    $sql = "SELECT * FROM produk 
-                            WHERE nama_produk LIKE '%$keyword%' 
-                            OR kategori LIKE '%$keyword%'";
+                    $sql = "SELECT * FROM produk WHERE nama_produk LIKE '%$keyword%' OR kategori LIKE '%$keyword%'";
                 } else {
                     $sql = "SELECT * FROM produk";
                 }

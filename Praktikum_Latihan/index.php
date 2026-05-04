@@ -19,7 +19,7 @@
 
     <!-- HEADER -->
     <div class="header">
-        <h2>📦 Data Produk</h2>
+        <h2>Data Produk</h2>
 
         <div class="d-flex gap-2">
             <a href="tambah.php" class="btn btn-primary">+ Tambah Produk</a>
@@ -57,9 +57,7 @@
                 $keyword = isset($_GET['keyword']) ? $conn->real_escape_string($_GET['keyword']) : '';
 
                 if ($keyword != '') {
-                    $sql = "SELECT * FROM produk 
-                            WHERE nama_produk LIKE '%$keyword%' 
-                            OR kategori LIKE '%$keyword%'";
+                    $sql = "SELECT * FROM produk WHERE nama_produk LIKE '%$keyword%' OR kategori LIKE '%$keyword%'";
                 } else {
                     $sql = "SELECT * FROM produk";
                 }

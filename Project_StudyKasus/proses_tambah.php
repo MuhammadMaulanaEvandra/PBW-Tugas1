@@ -1,18 +1,16 @@
 <?php
 include 'koneksi.php';
 
-$id = $_POST['id'];
-$nama_produk = $_POST['nama_produk'];
+$judul = $_POST['judul'];
+$penulis = $_POST['penulis'];
+$tahun_terbit = $_POST['tahun_terbit'];
 $harga = $_POST['harga'];
 $stok = $_POST['stok'];
-$kategori = $_POST['kategori'];
 
-$stmt = $conn->prepare( "UPDATE produk SET nama_produk=?, harga=?, stok=?, kategori=? WHERE id=?" );
+$stmt = $conn->prepare( "INSERT INTO buku (judul, penulis, tahun_terbit, harga, stok) VALUES (?, ?, ?, ?, ?)");
 
-$stmt->bind_param("sdisi", $nama_produk, $harga, $stok, $kategori, $id);
-
+$stmt->bind_param( "ssidi", $judul, $penulis, $tahun_terbit, $harga, $stok );
 $success = false;
-
 if ($stmt->execute()) {
     $success = true;
 }
@@ -25,7 +23,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proses Edit Produk</title>
+    <title>Proses Tambah Buku</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,15 +36,11 @@ $conn->close();
     <div class="container main-container">
         <div class="form-card text-center">
             <?php if ($success) { ?>
-                <div class="alert alert-warning">
-                    Data berhasil diupdate!
-                </div>
+                <div class="alert alert-success">Data berhasil ditambahkan!</div>
             <?php } else { ?>
-                <div class="alert alert-danger">
-                    Gagal mengupdate data!
-                </div>
+                <div class="alert alert-danger">Gagal menambahkan data!</div>
             <?php } ?>
-            <a href="index.php" class="btn btn-primary mt-3">Kembali ke Data Produk</a>
+            <a href="index.php" class="btn btn-primary mt-3">Kembali ke Data Buku</a>
         </div>
     </div>
 
